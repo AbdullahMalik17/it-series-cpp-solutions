@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Series C++ Study Hub — Verified MCQs, Output Traces &amp; Errata | AbdullahMalik17</title>
+  <meta name="description" content="Interactive C++ study guide solving all 245 MCQs and Output Exercises from IT Series Object-Oriented Programming using C++ (Chapters 1-5), with step-by-step traces and book errata.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        </span>
+        <span>IT Series C++ Hub</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#workspace">Practice &amp; Traces</a>
+        <a href="#errata-focus" id="nav-errata-link">Book Errata</a>
+        <a href="#author">Author</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="reset-progress" class="btn-icon" title="Reset quiz progress">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+          <span>Reset</span>
+        </button>
+        <button type="button" id="theme-toggle" class="btn-icon" aria-label="Toggle color theme">
+          <svg id="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+          <span id="theme-label">Light</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        <span>Chapters 1–5 · Verified C++ Solutions &amp; Errata</span>
+      </div>
+      <h1 class="hero-title">Master IT Series C++ MCQs &amp; Output Traces</h1>
+      <p class="hero-sub">
+        Every Multiple Choice Question and Output Exercise from Chapters 1–5, verified against both Turbo C++ (16-bit) and Modern Standard C++—with step-by-step dry-run traces and flagged textbook errata.
+      </p>
+
+      <div class="bento-grid">
+        <div class="bento-card bento-span-7">
+          <div class="q-meta">
+            <span class="q-num">LIVE STUDY TELEMETRY</span>
+            <span class="badge badge-info" id="accuracy-badge">0% Accuracy</span>
+          </div>
+          <p class="q-prompt">Track your MCQ practice across all 5 chapters. Click any option below to test yourself and reveal the verified explanation.</p>
+          <div class="kpi-row">
+            <div class="kpi-box">
+              <div class="kpi-val tabular-nums" id="kpi-total-mcqs">245</div>
+              <div class="kpi-label">Total MCQs</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-val tabular-nums" id="kpi-outputs">50</div>
+              <div class="kpi-label">Output Exercises</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-val tabular-nums" id="kpi-answered">0</div>
+              <div class="kpi-label">Attempted</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-val tabular-nums" id="kpi-errata">7</div>
+              <div class="kpi-label">Book Errata Flagged</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card bento-span-5">
+          <div class="q-meta">
+            <span class="q-num">FEATURED ERRATA TRACE // CH 5 Q.26</span>
+            <span class="badge badge-errata">Book: 501005050</span>
+          </div>
+          <div class="terminal-preview" aria-label="Featured C++ dry-run trace">
+            <div class="terminal-bar">
+              <span>dry_run_q26.cpp</span>
+              <span class="badge badge-ok">True Output: 50100</span>
+            </div>
+            <code>n1 = 25, n2 = 50;
+// 1st if: (25 &lt; 50 &amp;&amp; !(50 != 50)) -&gt; true
+//   n1 = 50, n2 = 100 -&gt; prints "50100"
+// 2nd if: (100 &lt; 2*50 || 50 == 100) -&gt; false!
+//   skipped -&gt; nothing else printed.</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workspace" class="workspace-section container" aria-label="Interactive Study Workspace">
+      <div class="tablist-wrap">
+        <div role="tablist" aria-label="Book Chapters" id="chapter-tablist">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <label for="search-input" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Search questions, code, or explanations</label>
+          <input id="search-input" class="search-input" type="search" placeholder="Search questions, code, or errata (e.g. setw, % , 50100)...">
+        </div>
+
+        <div class="filter-pills" role="group" aria-label="Filter questions">
+          <button type="button" class="pill" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="pill" data-filter="outputs" aria-pressed="false">Output &amp; Traces</button>
+          <button type="button" class="pill" data-filter="mcqs" aria-pressed="false">MCQs Only</button>
+          <button type="button" class="pill" id="errata-focus" data-filter="errata" aria-pressed="false">Errata &amp; Typos</button>
+        </div>
+      </div>
+
+      <div id="chapter-panels">
+        <!-- Populated dynamically by app.js with role="tabpanel" and hidden="until-found" -->
+      </div>
+    </section>
+
+    <section id="author" class="author-section container" aria-label="Author Details">
+      <div class="author-card">
+        <div class="author-avatar" aria-hidden="true">AM</div>
+        <div>
+          <div class="eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span>Author &amp; Maintainer</span>
+          </div>
+          <h2 style="font-size: 1.5rem; letter-spacing: -0.02em; margin-bottom: 0.5rem;">Abdullah Malik (<span class="mono">@AbdullahMalik17</span>)</h2>
+          <p style="color: var(--text-secondary); margin: 0; max-width: 65ch;">
+            Software developer and Computer Science enthusiast passionate about C++, systems programming, and clean web interfaces. Created this interactive study hub to help students master <em>IT Series: Object-Oriented Programming using C++</em> with verified answers, step-by-step execution traces, and clear explanations of textbook errata.
+          </p>
+          <div class="author-links">
+            <a class="btn-primary" href="https://github.com/AbdullahMalik17" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              <span>GitHub: AbdullahMalik17</span>
+            </a>
+            <a class="btn-icon" href="#workspace">
+              <span>Back to Questions</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container site-footer">
+    <span>IT Series C++ Study Hub · Verified Chapters 1–5</span>
+    <span>Built by <a href="https://github.com/AbdullahMalik17" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; font-weight: 500;">@AbdullahMalik17</a></span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
