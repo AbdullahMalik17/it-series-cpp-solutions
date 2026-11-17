@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================================
+   3-Layer Design Token Architecture (oklch)
+   ========================================================================== */
+:root {
+  --ink-950: oklch(0.125 0.01 260);
+  --ink-900: oklch(0.165 0.012 260);
+  --ink-850: oklch(0.205 0.014 260);
+  --ink-700: oklch(0.35 0.015 260);
+  --ink-500: oklch(0.55 0.015 260);
+  --ink-300: oklch(0.76 0.01 260);
+  --alabaster-50: oklch(0.985 0.004 85);
+  --alabaster-100: oklch(0.962 0.005 85);
+  --alabaster-200: oklch(0.925 0.006 85);
+  --pure-white: oklch(1 0 0);
+
+  --signal-indigo: oklch(0.54 0.21 262);
+  --signal-indigo-bright: oklch(0.68 0.18 262);
+  --signal-emerald: oklch(0.58 0.17 155);
+  --signal-emerald-bright: oklch(0.72 0.16 155);
+  --signal-amber: oklch(0.68 0.16 75);
+  --signal-amber-bright: oklch(0.78 0.15 75);
+  --signal-crimson: oklch(0.56 0.22 27);
+  --signal-crimson-bright: oklch(0.68 0.20 27);
+
+  --bg-canvas: var(--alabaster-50);
+  --bg-surface-1: var(--pure-white);
+  --bg-surface-2: var(--alabaster-100);
+  --bg-glass: oklch(1 0 0 / 0.82);
+  --text-primary: var(--ink-950);
+  --text-secondary: var(--ink-700);
+  --text-muted: var(--ink-500);
+  --accent: var(--signal-indigo);
+  --accent-soft: oklch(0.54 0.21 262 / 0.10);
+  --success: var(--signal-emerald);
+  --success-soft: oklch(0.58 0.17 155 / 0.12);
+  --warning: var(--signal-amber);
+  --warning-soft: oklch(0.68 0.16 75 / 0.14);
+  --danger: var(--signal-crimson);
+  --danger-soft: oklch(0.56 0.22 27 / 0.12);
+  --border-subtle: oklch(0.125 0.01 260 / 0.09);
+  --border-strong: oklch(0.125 0.01 260 / 0.18);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 12px 32px -8px rgba(0, 0, 0, 0.06);
+  --code-bg: var(--alabaster-200);
+}
+
+.dark {
+  --bg-canvas: var(--ink-950);
+  --bg-surface-1: var(--ink-900);
+  --bg-surface-2: var(--ink-850);
+  --bg-glass: oklch(0.14 0.012 260 / 0.78);
+  --text-primary: var(--alabaster-50);
+  --text-secondary: var(--ink-300);
+  --text-muted: var(--ink-500);
+  --accent: var(--signal-indigo-bright);
+  --accent-soft: oklch(0.68 0.18 262 / 0.14);
+  --success: var(--signal-emerald-bright);
+  --success-soft: oklch(0.72 0.16 155 / 0.14);
+  --warning: var(--signal-amber-bright);
+  --warning-soft: oklch(0.78 0.15 75 / 0.14);
+  --danger: var(--signal-crimson-bright);
+  --danger-soft: oklch(0.68 0.20 27 / 0.15);
+  --border-subtle: oklch(1 0 0 / 0.08);
+  --border-strong: oklch(1 0 0 / 0.16);
+  --card-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07), 0 16px 40px -12px rgba(0, 0, 0, 0.6);
+  --code-bg: oklch(0.11 0.01 260);
+}
+
+:root {
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Selected tab indicator from aria-selected with border on ::after (WCAG 1.4.1) */
+[role="tab"][aria-selected="true"] {
+  color: var(--accent);
+}
+
+[role="tab"][aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  border-block-end: 3px solid var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
